@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Vinilos</string>
+    <string name="template_album_cd_ivAlbum">Album cover</string>
 </resources>
