@@ -1,7 +1,5 @@
-package co.edu.uniandes.vinilos.view
+package co.edu.uniandes.vinilos.view.album
 
-import android.content.Context
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Album
 import co.edu.uniandes.vinilos.databinding.TemplateItemAlbumBinding
-import com.squareup.picasso.Picasso
 
 class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
-    var data: List<Album> = emptyList()
+    var data: List<Album> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -38,7 +35,6 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
         fun bind(album: Album){
             binding.album = album
-            Picasso.get().load(Uri.parse(album.cover)).into(binding.ivAlbum)
         }
 
     }
