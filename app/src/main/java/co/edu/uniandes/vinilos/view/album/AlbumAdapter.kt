@@ -11,11 +11,17 @@ import co.edu.uniandes.vinilos.databinding.TemplateItemAlbumBinding
 
 class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
+    var onAlbumSelected: ((id: Int) -> Unit)? = null
+
     var data: List<Album> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+
+    fun onClickAlbum(position: Int) {
+        onAlbumSelected?.invoke(data[position].id)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,7 +30,7 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
     }
 
     override fun onBindViewHolder(holder: AlbumHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], position, this)
     }
 
     override fun getItemCount() = data.size
@@ -33,8 +39,10 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
         private val binding: TemplateItemAlbumBinding = DataBindingUtil.bind(view)!!
 
-        fun bind(album: Album){
+        fun bind(album: Album, position: Int, handler: AlbumAdapter){
             binding.album = album
+            binding.position = position
+            binding.handler = handler
         }
 
     }

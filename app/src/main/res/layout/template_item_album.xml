@@ -7,11 +7,18 @@
         <variable
             name="album"
             type="co.edu.uniandes.vinilos.data.model.Album" />
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="handler"
+            type="co.edu.uniandes.vinilos.view.album.AlbumAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{ () -> handler.onClickAlbum(position) }">
 
         <ImageView
             android:id="@+id/ivAlbum"
