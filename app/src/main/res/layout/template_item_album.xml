@@ -18,6 +18,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:onClick="@{ () -> handler.onClickAlbum(position) }">
 
         <ImageView
@@ -30,9 +32,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="12dp"
             app:imageUrl="@{album.cover}"
-            tools:src="@android:drawable/btn_star"
+            tools:src="@drawable/default_album_image"
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
         <TextView
@@ -41,7 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{album.name}"
-            android:textSize="16sp"
+            android:textSize="17sp"
+            android:textColor="@color/secondaryDark"
             app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
             app:layout_constraintStart_toStartOf="@+id/ivAlbum"
             app:layout_constraintTop_toBottomOf="@+id/ivAlbum"

@@ -45,6 +45,20 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvReleaseDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/purple_700"
+                    android:textSize="12sp"
+                    app:dateFormat="@{album.releaseDate}"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    tools:text="1970/11/04" />
+
+                <TextView
                     android:id="@+id/tracks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textAlignment="textEnd"
+                    android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tvTitle"
@@ -125,7 +140,7 @@
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/purple_700"
-                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTitle"
                     app:layout_constraintTop_toBottomOf="@+id/tvTitle"
                     tools:text="Salsa" />
 
@@ -146,6 +161,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/tvLabel"
                     app:layout_constraintStart_toStartOf="@+id/tvDescription"
                     app:layout_constraintTop_toBottomOf="@id/tracks"

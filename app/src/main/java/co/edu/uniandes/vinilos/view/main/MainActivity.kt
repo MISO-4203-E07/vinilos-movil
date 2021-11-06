@@ -1,8 +1,7 @@
-package co.edu.uniandes.vinilos.view
+package co.edu.uniandes.vinilos.view.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import co.edu.uniandes.vinilos.R
+import androidx.appcompat.app.AppCompatActivity
 import co.edu.uniandes.vinilos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

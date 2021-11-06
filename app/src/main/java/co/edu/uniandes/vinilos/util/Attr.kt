@@ -8,13 +8,27 @@ import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Performer
 import co.edu.uniandes.vinilos.data.model.Track
 import com.squareup.picasso.Picasso
+import java.text.SimpleDateFormat
+import java.util.*
+
+const val DATE_TIME_FORMAT_YYYY_MM_DD = "yyyy/MM/dd"
 
 @BindingAdapter("app:imageUrl")
 fun setImageByUrl(view: ImageView, url: String?) {
     url?.let {
         Picasso.get()
                 .load(Uri.parse(it))
+                .placeholder(R.drawable.default_album_image)
+                .error(R.drawable.ic_round_broken_image)
                 .into(view)
+    }
+}
+
+@BindingAdapter("app:dateFormat")
+fun setDateText(view: TextView, date: Date?) {
+    val sdf = SimpleDateFormat(DATE_TIME_FORMAT_YYYY_MM_DD, Locale.getDefault())
+    date?.let {
+        view.text = sdf.format(it)
     }
 }
 
