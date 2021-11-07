@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilos.view.album
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -20,11 +21,20 @@ class AlbumActivity : AppCompatActivity() {
         val adapter = AlbumAdapter()
         binding.rvAlbums.adapter = adapter
 
+        adapter.onAlbumSelected = this::goToDetailAlbum
+
         albumViewModel.listAlbums.observe(this, Observer {
             adapter.data = it
         })
 
         albumViewModel.getAlbums()
 
+    }
+
+    private fun goToDetailAlbum(id: Int) {
+        val intent = Intent(this, DetailAlbumActivity::class.java).apply {
+            putExtra("ID_ALBUM", id)
+        }
+        startActivity(intent)
     }
 }

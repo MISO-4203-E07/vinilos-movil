@@ -7,11 +7,20 @@
         <variable
             name="album"
             type="co.edu.uniandes.vinilos.data.model.Album" />
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="handler"
+            type="co.edu.uniandes.vinilos.view.album.AlbumAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{ () -> handler.onClickAlbum(position) }">
 
         <ImageView
             android:id="@+id/ivAlbum"
@@ -23,22 +32,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="12dp"
             app:imageUrl="@{album.cover}"
-            tools:src="@android:drawable/btn_star"
+            tools:src="@drawable/default_album_image"
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
         <TextView
             android:id="@+id/tvNameAlbum"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{album.name}"
+            android:textSize="17sp"
+            android:textColor="@color/secondaryDark"
             app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
             app:layout_constraintStart_toStartOf="@+id/ivAlbum"
             app:layout_constraintTop_toBottomOf="@+id/ivAlbum"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:text="@{album.name}"
-            tools:text="Nombre del album"/>
+            tools:text="Album's name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

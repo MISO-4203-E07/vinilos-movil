@@ -11,18 +11,31 @@ class RetrofitBroker {
 
         fun getAllAlbums (onResponse : (resp:List<Album>) -> Unit, onFailure : (err: String) -> Unit) {
             val request = ApiClient.albums.getAllAlbums()
-            val response = request.enqueue(object : Callback<List<Album>> {
+            request.enqueue(object : Callback<List<Album>> {
                 override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
                     onResponse(response.body() ?: listOf())
                 }
 
                 override fun onFailure(call: Call<List<Album>>, t: Throwable) {
-                    onFailure(t.message ?: "Error en el llamado al servicio")
+                    onFailure(t.message ?: "Failure API")
                 }
 
             })
         }
 
+        fun getAlbumById (id: Int, onResponse : (resp:Album?) -> Unit, onFailure : (err: String) -> Unit) {
+            val request = ApiClient.albums.getAlbumById(id.toString())
+            request.enqueue(object : Callback<Album> {
+                override fun onResponse(call: Call<Album>, response: Response<Album>) {
+                    onResponse(response.body())
+                }
+
+                override fun onFailure(call: Call<Album>, t: Throwable) {
+                    onFailure(t.message ?: "Failure API")
+                }
+
+            })
+        }
     }
 
 }

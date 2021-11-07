@@ -10,9 +10,7 @@ data class Album(
     val releaseDate: Date,
     val description: String,
     val genre: String,
-    val recordLabel: String
+    val recordLabel: String,
+    val tracks: List<Track>,
+    val performers: List<Performer>
     )
-
-//enum class GENRE {
-//    NORTH, SOUTH, WEST, EAST
-//}
