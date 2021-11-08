@@ -33,7 +33,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:imageUrl="@{album.cover}"
-            tools:src="@drawable/default_album_image"
+            tools:src="@drawable/ic_round_broken_image"
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
         <TextView
