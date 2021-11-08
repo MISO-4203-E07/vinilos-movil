@@ -18,7 +18,6 @@ fun setImageByUrl(view: ImageView, url: String?) {
     url?.let {
         Picasso.get()
                 .load(Uri.parse(it))
-                .placeholder(R.drawable.default_album_image)
                 .error(R.drawable.ic_round_broken_image)
                 .into(view)
     }
