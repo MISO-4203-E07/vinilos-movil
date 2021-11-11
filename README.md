@@ -45,12 +45,12 @@ En de Android Studio, en la pestaña **Project**, dirígase a la siguiente carpe
 ```shell  
 app/java/co.edu.uniandes.vinilos (androidTest)/view.album  
 ```  
-Si desea peude correr cada test individualmente abriendo cada uno de los archivos de tests, es decir:
+Si desea peude correr cada prueba individualmente; abra cada uno de los archivos de tests, es decir:
 
 - AlbumActivityTest.kt
 - DetailAlbumActivityTest.kt
 
-O pude ejecutarlos todos al mismo tiempo abriendo el archivo
+O pude ejecutarlass todas al mismo tiempo abriendo el archivo
 
 - MainTestSuite.kt
 
