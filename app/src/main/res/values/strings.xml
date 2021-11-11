@@ -2,10 +2,21 @@
     <string name="app_name">Vinilos</string>
     <string name="template_album_cd_ivAlbum">Album cover</string>
     <string name="activity_album_cd_floating_btn_new_album">Button to add a new album</string>
+    <string name="activity_album_cd_floating_btn_new_artist">Button to add a new artist</string>
     <string name="activity_detail_album_cd_floating_btn_new_track">Button to associate tracks to the album</string>
     <string name="activity_detail_album_no_info_performers">No performers available</string>
     <string name="activity_detail_album_no_info_tracks">No tracks available</string>
     <string name="activity_detail_album_label_tracks">Tracks</string>
     <string name="activity_detail_album_label_recordLabel">Record label</string>
     <string name="activity_detail_album_album_not_exists">Album does not exist</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_artist">Artist</string>
+    <string name="menu_album">Album</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

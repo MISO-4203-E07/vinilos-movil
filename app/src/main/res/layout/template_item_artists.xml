@@ -5,14 +5,14 @@
 
     <data>
         <variable
-            name="album"
-            type="co.edu.uniandes.vinilos.data.model.Album" />
+            name="performer"
+            type="co.edu.uniandes.vinilos.data.model.Performer" />
         <variable
             name="position"
             type="Integer" />
         <variable
             name="handler"
-            type="co.edu.uniandes.vinilos.view.album.AlbumAdapter" />
+            type="co.edu.uniandes.vinilos.view.artist.ArtistAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="@{ () -> handler.onClickAlbum(position) }">
+        android:onClick="@{ () -> handler.onClickArtist(position) }">
 
         <ImageView
             android:id="@+id/ivArtist"
@@ -32,7 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:imageUrl="@{album.cover}"
+            app:imageUrl="@{performer.image}"
             tools:src="@drawable/ic_round_broken_image"
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
@@ -41,13 +41,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{album.name}"
+            android:text="@{performer.name}"
             android:textSize="17sp"
             android:textColor="@color/secondaryDark"
             app:layout_constraintEnd_toEndOf="@+id/ivArtist"
             app:layout_constraintStart_toStartOf="@+id/ivArtist"
             app:layout_constraintTop_toBottomOf="@+id/ivArtist"
-            tools:text="Album's name" />
+            tools:text="Artist's name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

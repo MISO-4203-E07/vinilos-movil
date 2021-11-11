@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Vinilos.FloatingAccentButtonOverlay" >
+    <style name="Theme.Vinilos.FloatingAccentButtonOverlay">
         <item name="colorSecondary">@color/secondaryDark</item>
         <item name="colorOnSecondary">@android:color/white</item>
     </style>
@@ -25,5 +25,14 @@
         <!-- Customize colorSecondary to change icon/text of FAB (maps to tint and rippleColor) -->
         <item name="colorOnSecondary">@android:color/white</item>
     </style>
+
+    <style name="Theme.Vinilos.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Vinilos.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Vinilos.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
