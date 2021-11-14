@@ -5,14 +5,14 @@
 
     <data>
         <variable
-            name="album"
-            type="co.edu.uniandes.vinilos.data.model.Album" />
+            name="collector"
+            type="co.edu.uniandes.vinilos.data.model.Collector" />
         <variable
             name="position"
             type="Integer" />
         <variable
             name="handler"
-            type="co.edu.uniandes.vinilos.view.album.AlbumAdapter" />
+            type="co.edu.uniandes.vinilos.view.collector.CollectorAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="@{ () -> handler.onClickAlbum(position) }">
+        android:onClick="@{ () -> handler.onClickCollector(position) }">
 
         <TextView
             android:id="@+id/tvNameCollector"
@@ -29,7 +29,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="80dp"
-            android:text="@{album.name}"
+            android:text="@{collector.name}"
             android:textColor="@color/secondaryDark"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"

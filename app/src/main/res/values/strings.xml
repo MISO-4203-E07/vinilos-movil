@@ -19,4 +19,5 @@
     <string name="menu_artist">Artist</string>
     <string name="menu_album">Album</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_collector">Collector</string>
 </resources>

@@ -7,6 +7,7 @@ import androidx.databinding.BindingAdapter
 import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Performer
 import co.edu.uniandes.vinilos.data.model.Track
+import co.edu.uniandes.vinilos.data.model.Collector
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
@@ -58,3 +59,18 @@ fun setTracks(view: TextView, list: List<Track>?) {
             view.text = view.context.getString(R.string.activity_detail_album_no_info_tracks)
     }
 }
+
+/*
+@BindingAdapter("app:collectorsFromList")
+fun setCollectors(view: TextView, list: List<Collector>?) {
+    list?.let { collectors ->
+        var users = ""
+        collectors.forEach {
+            users += "- " + it.name + "\n"
+        }
+        if (users.isNotEmpty())
+            view.text = users.substring(0, users.length - 1)
+        else
+            view.text = view.context.getString(R.string.activity_detail_album_no_info_tracks)
+    }
+}*/
