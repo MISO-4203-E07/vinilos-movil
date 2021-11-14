@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="album"
+            type="co.edu.uniandes.vinilos.data.model.Album" />
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="handler"
+            type="co.edu.uniandes.vinilos.view.album.AlbumAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{ () -> handler.onClickAlbum(position) }">
+
+        <TextView
+            android:id="@+id/tvNameCollector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:text="@{album.name}"
+            android:textColor="@color/secondaryDark"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Collector's name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
