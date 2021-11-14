@@ -37,7 +37,7 @@
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
         <TextView
-            android:id="@+id/tvNameArtist"
+            android:id="@+id/tvNameAlbum"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
