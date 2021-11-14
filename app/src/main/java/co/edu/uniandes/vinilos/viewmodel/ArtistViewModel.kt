@@ -8,7 +8,7 @@ import co.edu.uniandes.vinilos.data.repositories.ArtistRepository
 class ArtistViewModel : ViewModel() {
 
     val listArtist = MutableLiveData<List<Performer>>()
-    val album = MutableLiveData<Performer>()
+    val performer = MutableLiveData<Performer>()
     private val artistRepository = ArtistRepository()
 
     fun getArtists() {
@@ -19,7 +19,7 @@ class ArtistViewModel : ViewModel() {
 
     fun getArtistById(id: Int) {
         artistRepository.getArtistById(id, onResponse = {
-            album.postValue(it)
+            performer.postValue(it)
         })
     }
 }
