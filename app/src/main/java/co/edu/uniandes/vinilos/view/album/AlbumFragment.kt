@@ -29,7 +29,7 @@ class AlbumFragment : Fragment() {
         val adapter = AlbumAdapter()
         binding.rvAlbums.adapter = adapter
 
-        adapter.onArtistSelected = this::goToDetailAlbum
+        adapter.onAlbumSelected = this::goToDetailAlbum
 
         albumViewModel.listAlbums.observe(viewLifecycleOwner,  {
             adapter.data = it
