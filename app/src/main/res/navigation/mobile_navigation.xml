@@ -17,4 +17,10 @@
         android:label="@string/menu_album"
         tools:layout="@layout/fragment_album" />
 
+    <fragment
+        android:id="@+id/nav_collector"
+        android:name="co.edu.uniandes.vinilos.view.collector.CollectorFragment"
+        android:label="@string/menu_collector"
+        tools:layout="@layout/fragment_collector" />
+
 </navigation>

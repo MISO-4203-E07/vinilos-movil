@@ -1,6 +1,7 @@
 package co.edu.uniandes.vinilos.data.net
 
 import co.edu.uniandes.vinilos.data.model.Album
+import co.edu.uniandes.vinilos.data.model.Collector
 import co.edu.uniandes.vinilos.data.model.Performer
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,10 +38,17 @@ class RetrofitBroker {
 
             })
         }
-        fun getAllArtists (onResponse : (resp:List<Performer>) -> Unit, onFailure : (err: String) -> Unit) {
+
+        fun getAllArtists(
+            onResponse: (resp: List<Performer>) -> Unit,
+            onFailure: (err: String) -> Unit
+        ) {
             val request = ApiClient.artist.getAllArtists()
             request.enqueue(object : Callback<List<Performer>> {
-                override fun onResponse(call: Call<List<Performer>>, response: Response<List<Performer>>) {
+                override fun onResponse(
+                    call: Call<List<Performer>>,
+                    response: Response<List<Performer>>
+                ) {
                     onResponse(response.body() ?: listOf())
                 }
 
@@ -51,7 +59,11 @@ class RetrofitBroker {
             })
         }
 
-        fun getArtistById (id: Int, onResponse : (resp:Performer?) -> Unit, onFailure : (err: String) -> Unit) {
+        fun getArtistById(
+            id: Int,
+            onResponse: (resp: Performer?) -> Unit,
+            onFailure: (err: String) -> Unit
+        ) {
             val request = ApiClient.artist.getArtistById(id.toString())
             request.enqueue(object : Callback<Performer> {
                 override fun onResponse(call: Call<Performer>, response: Response<Performer>) {
@@ -64,6 +76,44 @@ class RetrofitBroker {
 
             })
         }
-    }
 
+
+        fun getAllCollectors(
+            onResponse: (resp: List<Collector>) -> Unit,
+            onFailure: (err: String) -> Unit
+        ) {
+            val request = ApiClient.collector.getAllCollectors()
+            request.enqueue(object : Callback<List<Collector>> {
+                override fun onResponse(
+                    call: Call<List<Collector>>,
+                    response: Response<List<Collector>>
+                ) {
+                    onResponse(response.body() ?: listOf())
+                }
+
+                override fun onFailure(call: Call<List<Collector>>, t: Throwable) {
+                    onFailure(t.message ?: "Failure API")
+                }
+
+            })
+        }
+
+        fun getCollectorById(
+            id: Int,
+            onResponse: (resp: Collector?) -> Unit,
+            onFailure: (err: String) -> Unit
+        ) {
+            val request = ApiClient.collector.getCollectorById(id.toString())
+            request.enqueue(object : Callback<Collector> {
+                override fun onResponse(call: Call<Collector>, response: Response<Collector>) {
+                    onResponse(response.body())
+                }
+
+                override fun onFailure(call: Call<Collector>, t: Throwable) {
+                    onFailure(t.message ?: "Failure API")
+                }
+
+            })
+        }
+    }
 }

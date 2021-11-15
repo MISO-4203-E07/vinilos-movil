@@ -23,7 +23,7 @@
         android:onClick="@{ () -> handler.onClickArtist(position) }">
 
         <ImageView
-            android:id="@+id/ivAlbum"
+            android:id="@+id/ivArtist"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="80dp"
@@ -37,16 +37,16 @@
             android:contentDescription="@string/template_album_cd_ivAlbum" />
 
         <TextView
-            android:id="@+id/tvNameAlbum"
+            android:id="@+id/tvNameArtist"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{performer.name}"
             android:textSize="17sp"
             android:textColor="@color/secondaryDark"
-            app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
-            app:layout_constraintStart_toStartOf="@+id/ivAlbum"
-            app:layout_constraintTop_toBottomOf="@+id/ivAlbum"
+            app:layout_constraintEnd_toEndOf="@+id/ivArtist"
+            app:layout_constraintStart_toStartOf="@+id/ivArtist"
+            app:layout_constraintTop_toBottomOf="@+id/ivArtist"
             tools:text="Artist's name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
