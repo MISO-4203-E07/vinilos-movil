@@ -16,4 +16,6 @@ object ApiClient {
 
     val albums: AlbumApi = retrofit.create(AlbumApi::class.java)
 
+    val artist: ArtistApi = retrofit.create(ArtistApi::class.java)
+
 }

@@ -11,15 +11,18 @@
         android:roundIcon="@drawable/ic_vinilos_circle"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vinilos">
-        <activity android:name=".view.album.DetailAlbumActivity"/>
-        <activity android:name=".view.album.AlbumActivity">
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Vinilos.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.main.MainActivity" />
+        <activity android:name="co.edu.uniandes.vinilos.view.album.DetailAlbumActivity" />
     </application>
 
 </manifest>

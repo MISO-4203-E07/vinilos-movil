@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="performer"
+            type="co.edu.uniandes.vinilos.data.model.Performer" />
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="handler"
+            type="co.edu.uniandes.vinilos.view.artist.ArtistAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{ () -> handler.onClickArtist(position) }">
+
+        <ImageView
+            android:id="@+id/ivAlbum"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{performer.image}"
+            tools:src="@drawable/ic_round_broken_image"
+            android:contentDescription="@string/template_album_cd_ivAlbum" />
+
+        <TextView
+            android:id="@+id/tvNameAlbum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{performer.name}"
+            android:textSize="17sp"
+            android:textColor="@color/secondaryDark"
+            app:layout_constraintEnd_toEndOf="@+id/ivAlbum"
+            app:layout_constraintStart_toStartOf="@+id/ivAlbum"
+            app:layout_constraintTop_toBottomOf="@+id/ivAlbum"
+            tools:text="Artist's name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
