@@ -8,7 +8,7 @@ import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import co.edu.uniandes.vinilos.R
-import org.junit.Before
+import co.edu.uniandes.vinilos.base.BaseTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,27 +16,26 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class AlbumActivityTest {
+class AlbumActivityTest : BaseTest() {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(AlbumActivity::class.java)
 
-    @Before
-    fun setup() {
-        Thread.sleep(3000)
-    }
-
     @Test
     fun isListRecycleViewVisible_onAppLaunch() {
+        onView(isRoot()).perform(waitForView(withId(R.id.rvAlbums)))
         onView(withId(R.id.rvAlbums)).check(matches(isDisplayed()))
     }
 
     @Test
     fun isAlbumItemViewVisible_onAppLaunch() {
-        onView(withText("Buscando América")).check(matches(isDisplayed()))
+        val firstTexView = "Buscando América"
+        val secondTexView = "A Day at the Races"
+        onView(isRoot()).perform(waitForView(withText(firstTexView)))
+        onView(withText(firstTexView)).check(matches(isDisplayed()))
         onView(withId(R.id.rvAlbums))
             .perform(swipeUp())
-        onView(withText("A Day at the Races")).check(matches(isDisplayed()))
+        onView(withText(secondTexView)).check(matches(isDisplayed()))
     }
 }

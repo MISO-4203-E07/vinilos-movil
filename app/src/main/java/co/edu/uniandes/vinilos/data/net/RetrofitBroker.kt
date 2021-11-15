@@ -11,10 +11,7 @@ class RetrofitBroker {
 
     companion object {
 
-        fun getAllAlbums(
-            onResponse: (resp: List<Album>) -> Unit,
-            onFailure: (err: String) -> Unit
-        ) {
+        fun getAllAlbums (onResponse : (resp:List<Album>) -> Unit, onFailure : (err: String) -> Unit) {
             val request = ApiClient.albums.getAllAlbums()
             request.enqueue(object : Callback<List<Album>> {
                 override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
@@ -28,11 +25,7 @@ class RetrofitBroker {
             })
         }
 
-        fun getAlbumById(
-            id: Int,
-            onResponse: (resp: Album?) -> Unit,
-            onFailure: (err: String) -> Unit
-        ) {
+        fun getAlbumById (id: Int, onResponse : (resp:Album?) -> Unit, onFailure : (err: String) -> Unit) {
             val request = ApiClient.albums.getAlbumById(id.toString())
             request.enqueue(object : Callback<Album> {
                 override fun onResponse(call: Call<Album>, response: Response<Album>) {
