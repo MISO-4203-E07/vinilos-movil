@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="co.edu.uniandes.vinilos.view.album.DetailAlbumActivity" />
+        <activity android:name="co.edu.uniandes.vinilos.view.artist.ArtistDetailActivity" />
     </application>
 
 </manifest>
