@@ -16,6 +16,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import co.edu.uniandes.vinilos.HiltTestActivity
 import co.edu.uniandes.vinilos.R
+import co.edu.uniandes.vinilos.data.model.AlbumModelTest
 import co.edu.uniandes.vinilos.view.album.AlbumFragment
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -32,9 +33,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.util.concurrent.TimeUnit
 
-
-@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4::class)
 @HiltAndroidTest
+@RunWith(androidx.test.ext.junit.runners.AndroidJUnit4::class)
 class AlbumTest {
 
     @get:Rule
@@ -48,16 +48,19 @@ class AlbumTest {
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
+    private val testBundle = AlbumModelTest.testBundle
+
     @Before
     fun setUp() {
         hiltRule.inject()
+
     }
 
     @ExperimentalCoroutinesApi
     @Test
-    fun test() {
+    fun testWithHilt() {
         launchFragmentInHiltContainer<AlbumFragment>()
-        Thread.sleep(TimeUnit.SECONDS.toMillis(2))
+        Thread.sleep(TimeUnit.SECONDS.toMillis(222))
         checkViewIsDisplayed(R.id.rvAlbums)
     }
 
@@ -221,6 +224,7 @@ class AlbumTest {
             }
         }
     }
+
     fun checkViewIsDisplayed(viewId: Int): ViewInteraction {
         return onView(withId(viewId)).check(matches(isDisplayed()))
     }
