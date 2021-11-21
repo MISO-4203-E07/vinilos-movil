@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class AlbumTest : BaseTest() {
+class ArtistTest : BaseTest() {
 
 
     @Rule
@@ -30,7 +30,7 @@ class AlbumTest : BaseTest() {
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun givenAlbum_WhenAlbumIsLoad_CheckDetail() {
+    fun givenArtists_WhenArtistIsLoad_CheckDetail() {
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
 
@@ -38,19 +38,12 @@ class AlbumTest : BaseTest() {
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
 
-
-        getItemNavBar(R.id.nav_album).perform(click())
+        getItemNavBar(R.id.nav_home).perform(click())
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
 
         val recyclerView = onView(
-            allOf(
-                withId(R.id.rvAlbums),
-                childAtPosition(
-                    withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
-                    0
-                )
-            )
+            allOf(withId(R.id.tvArtist))
         )
 
         recyclerView.perform(actionOnItemAtPosition<ViewHolder>(0, click()))
@@ -59,69 +52,56 @@ class AlbumTest : BaseTest() {
 
         val textView = onView(
             allOf(
-                withId(R.id.tvGenre),
+                withId(R.id.tvName),
                 withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
         )
         textView.check(matches(isDisplayed()))
-
-        val label = onView(
-            allOf(
-                withId(R.id.tracks),
-                withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
-                isDisplayed()
-            )
-        )
-        label.check(matches(withText("Tracks")))
     }
 
     @Test
-    fun givenAlbums_WhenAlbumsIsLoad_CheckAtLeastOne() {
+    fun givenArtists_WhenAlbumsIsLoad_CheckAtLeastOne() {
         Thread.sleep(TimeUnit.SECONDS.toMillis(2))
 
-        val appCompatImageButton = getNavBar()
-        appCompatImageButton.perform(click())
-
-        Thread.sleep(TimeUnit.SECONDS.toMillis(2))
-
-        val navigationMenuItemView = getItemNavBar(R.id.nav_album)
-        navigationMenuItemView.perform(click())
+        getNavBar().perform(click())
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(2))
 
-        onView(withId(R.id.rvAlbums))
+        getItemNavBar(R.id.nav_home).perform(click())
+
+        Thread.sleep(TimeUnit.SECONDS.toMillis(2))
+
+        onView(withId(R.id.tvArtist))
             .perform(scrollToPosition<ViewHolder>(0))
             .check(matches(atPosition(0, isDisplayed())));
     }
 
     @Test
-    fun givenAlbums_WhenAlbumsIsNotLoaded_CheckAtLeastOneNotExits() {
+    fun givenArtists_WhenAlbumsIsNotLoaded_CheckAtLeastOneNotExits() {
         Thread.sleep(TimeUnit.SECONDS.toMillis(2))
 
-        val appCompatImageButton = getNavBar()
-        appCompatImageButton.perform(click())
+        getNavBar().perform(click())
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
 
-        val navigationMenuItemView = getItemNavBar(R.id.nav_album)
-        navigationMenuItemView.perform(click())
+        getItemNavBar(R.id.nav_home).perform(click())
 
-        onView(withId(R.id.rvAlbums))
+        onView(withId(R.id.tvArtist))
             .check(matches(atPosition(100, not(isDisplayed()))));
     }
 
     @Test
-    fun givenAlbum_WhenAlbumIsLoad_CheckDetailAndReturnSuccess() {
+    fun givenArtists_WhenAlbumIsLoad_CheckDetailAndReturnSuccess() {
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
         getNavBar().perform(click())
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
-        getItemNavBar(R.id.nav_album).perform(click())
+        getItemNavBar(R.id.nav_home).perform(click())
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
         val recyclerView = onView(
             allOf(
-                withId(R.id.rvAlbums),
+                withId(R.id.tvArtist),
                 childAtPosition(
                     withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                     0
@@ -132,7 +112,7 @@ class AlbumTest : BaseTest() {
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
         val textView = onView(
             allOf(
-                withId(R.id.tvGenre),
+                withId(R.id.tvName),
                 withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
@@ -147,5 +127,8 @@ class AlbumTest : BaseTest() {
 
         recyclerView.check(matches(isDisplayed()))
     }
+
+
+
 
 }
