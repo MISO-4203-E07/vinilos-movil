@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinilos.view.album
+package co.edu.uniandes.vinilos.view.artist
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.test.espresso.Espresso.onView
@@ -61,7 +61,7 @@ class ArtistTest : BaseTest() {
     }
 
     @Test
-    fun givenArtists_WhenAlbumsIsLoad_CheckAtLeastOne() {
+    fun givenArtists_WhenArtistsIsLoad_CheckAtLeastOne() {
         Thread.sleep(TimeUnit.SECONDS.toMillis(2))
 
         getNavBar().perform(click())
@@ -78,7 +78,7 @@ class ArtistTest : BaseTest() {
     }
 
     @Test
-    fun givenArtists_WhenAlbumsIsNotLoaded_CheckAtLeastOneNotExits() {
+    fun givenArtists_WhenArtistsIsNotLoaded_CheckAtLeastOneNotExits() {
         Thread.sleep(TimeUnit.SECONDS.toMillis(2))
 
         getNavBar().perform(click())
@@ -92,7 +92,7 @@ class ArtistTest : BaseTest() {
     }
 
     @Test
-    fun givenArtists_WhenAlbumIsLoad_CheckDetailAndReturnSuccess() {
+    fun givenArtists_WhenArtistIsLoad_CheckDetailAndReturnSuccess() {
 
         Thread.sleep(TimeUnit.SECONDS.toMillis(1))
         getNavBar().perform(click())
