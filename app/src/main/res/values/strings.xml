@@ -9,6 +9,7 @@
     <string name="activity_detail_album_label_tracks">Tracks</string>
     <string name="activity_detail_album_label_recordLabel">Record label</string>
     <string name="activity_detail_album_album_not_exists">Album does not exist</string>
+    <string name="activity_detail_artist_artist_not_exists">Artist does not exist</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
