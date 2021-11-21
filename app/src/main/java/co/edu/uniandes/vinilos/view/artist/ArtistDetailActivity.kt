@@ -28,7 +28,7 @@ class ArtistDetailActivity : AppCompatActivity() {
             binding.performer = performer
             supportActionBar?.title = "Vinilos - ${performer.name}"
             if (performer == null)
-                Toast.makeText(this, getString(R.string.activity_detail_album_album_not_exists), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.activity_detail_artist_artist_not_exists), Toast.LENGTH_SHORT).show()
         })
 
         artistViewModel.getArtistById(idArtist)

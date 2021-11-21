@@ -1,16 +1,16 @@
 package co.edu.uniandes.vinilos.data.net
 
 import co.edu.uniandes.vinilos.data.model.Collector
-import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface CollectorApi {
 
     @GET("collectors")
-    fun getAllCollectors() : Call<List<Collector>>
+    suspend fun getAllCollectors() : Response<List<Collector>>
 
     @GET("collectors/{id}")
-    fun getCollectorById(@Path("id") id: String) : Call<Collector>
+    suspend fun getCollectorById(@Path("id") id: String) : Response<Collector>
 
 }
