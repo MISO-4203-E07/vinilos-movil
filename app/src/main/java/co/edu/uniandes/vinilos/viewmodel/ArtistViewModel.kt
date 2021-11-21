@@ -1,19 +1,20 @@
 package co.edu.uniandes.vinilos.viewmodel
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinilos.data.model.Performer
 import co.edu.uniandes.vinilos.data.repositories.ArtistRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ArtistViewModel : ViewModel() {
+class ArtistViewModel(application: Application) : AndroidViewModel(application) {
 
     val listArtist = MutableLiveData<List<Performer>>()
     val performer = MutableLiveData<Performer>()
-    private val artistRepository = ArtistRepository()
+    private val artistRepository = ArtistRepository(application)
 
     fun getArtists() {
         try {
