@@ -11,14 +11,11 @@
     <string name="activity_detail_album_album_not_exists">Album does not exist</string>
     <string name="activity_detail_artist_artist_not_exists">Artist does not exist</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_artist">Artist</string>
     <string name="menu_album">Album</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_collector">Collector</string>
 </resources>

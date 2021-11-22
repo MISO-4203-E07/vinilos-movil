@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilos.view.collector
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class CollectorAdapter() : RecyclerView.Adapter<CollectorAdapter.CollectorHolder
     var onCollectorSelected: ((id: Int) -> Unit)? = null
 
     var data: List<Collector> = listOf()
+        @SuppressLint("NotifyDataSetChanged")
         set(value) {
             field = value
             notifyDataSetChanged()

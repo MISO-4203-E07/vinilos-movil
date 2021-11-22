@@ -7,12 +7,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="statusBar">#1c313a</color>
-    <color name="primary">#455a64</color>
-    <color name="primaryLight">#718792</color>
-    <color name="primaryDark">#1c313a</color>
-    <color name="secondary">#757575</color>
-    <color name="secondaryLight">#a4a4a4</color>
     <color name="secondaryDark">#494949</color>
-    <color name="backgroundHome">#80E1DFDF</color>
 </resources>

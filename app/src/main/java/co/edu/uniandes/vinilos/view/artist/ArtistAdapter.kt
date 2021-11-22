@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilos.view.artist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class ArtistAdapter() : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>() {
     var onArtistSelected: ((id: Int) -> Unit)? = null
 
     var data: List<Performer> = listOf()
+        @SuppressLint("NotifyDataSetChanged")
         set(value) {
             field = value
             notifyDataSetChanged()
