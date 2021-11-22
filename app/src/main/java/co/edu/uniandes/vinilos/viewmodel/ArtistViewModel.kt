@@ -5,35 +5,34 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import co.edu.uniandes.vinilos.data.model.Album
-import co.edu.uniandes.vinilos.data.repositories.AlbumRepository
+import co.edu.uniandes.vinilos.data.model.Performer
+import co.edu.uniandes.vinilos.data.repositories.ArtistRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AlbumViewModel(application: Application) : AndroidViewModel(application) {
+class ArtistViewModel(application: Application) : AndroidViewModel(application) {
 
-    val listAlbums = MutableLiveData<List<Album>>()
-    val album = MutableLiveData<Album>()
-    private val albumsRepository = AlbumRepository(application)
+    val listArtist = MutableLiveData<List<Performer>>()
+    val performer = MutableLiveData<Performer>()
+    private val artistRepository = ArtistRepository(application)
 
-    fun getAlbums() {
+    fun getArtists() {
         try {
             viewModelScope.launch(Dispatchers.IO) {
-                listAlbums.postValue(albumsRepository.getAllAlbums())
+                listArtist.postValue(artistRepository.getAllArtists())
             }
         } catch (e: Exception) {
             Log.e("Error", e.message ?: "Failure service")
         }
     }
 
-    fun getAlbumById(id: Int) {
+    fun getArtistById(id: Int) {
         try {
             viewModelScope.launch(Dispatchers.IO) {
-                album.postValue(albumsRepository.getAlbumById(id))
+                performer.postValue(artistRepository.getArtistById(id))
             }
         } catch (e: Exception) {
             Log.e("Error", e.message ?: "Failure service")
         }
     }
-
 }

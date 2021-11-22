@@ -1,41 +1,60 @@
 package co.edu.uniandes.vinilos.data.net
 
 import co.edu.uniandes.vinilos.data.model.Album
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import co.edu.uniandes.vinilos.data.model.Collector
+import co.edu.uniandes.vinilos.data.model.Performer
 
 class RetrofitBroker {
 
     companion object {
 
-        fun getAllAlbums (onResponse : (resp:List<Album>) -> Unit, onFailure : (err: String) -> Unit) {
+        suspend fun getAllAlbums (): List<Album> {
             val request = ApiClient.albums.getAllAlbums()
-            request.enqueue(object : Callback<List<Album>> {
-                override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
-                    onResponse(response.body() ?: listOf())
-                }
-
-                override fun onFailure(call: Call<List<Album>>, t: Throwable) {
-                    onFailure(t.message ?: "Failure API")
-                }
-
-            })
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
         }
 
-        fun getAlbumById (id: Int, onResponse : (resp:Album?) -> Unit, onFailure : (err: String) -> Unit) {
+        suspend fun getAlbumById (id: Int): Album? {
             val request = ApiClient.albums.getAlbumById(id.toString())
-            request.enqueue(object : Callback<Album> {
-                override fun onResponse(call: Call<Album>, response: Response<Album>) {
-                    onResponse(response.body())
-                }
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
 
-                override fun onFailure(call: Call<Album>, t: Throwable) {
-                    onFailure(t.message ?: "Failure API")
-                }
+        suspend fun getAllArtists(): List<Performer> {
+            val request = ApiClient.artist.getAllArtists()
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
+        }
 
-            })
+        suspend fun getArtistById(id: Int): Performer? {
+            val request = ApiClient.artist.getArtistById(id.toString())
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
+
+        suspend fun getAllCollectors(): List<Collector> {
+            val request = ApiClient.collector.getAllCollectors()
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
+        }
+
+        suspend fun getCollectorById(id: Int): Collector? {
+            val request = ApiClient.collector.getCollectorById(id.toString())
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
         }
     }
-
 }
