@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilos.view.album
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
     var onAlbumSelected: ((id: Int) -> Unit)? = null
 
     var data: List<Album> = listOf()
+        @SuppressLint("NotifyDataSetChanged")
         set(value) {
             field = value
             notifyDataSetChanged()
