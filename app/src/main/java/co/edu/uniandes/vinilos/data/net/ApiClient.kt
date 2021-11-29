@@ -11,7 +11,6 @@ object ApiClient {
     private val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .addConverterFactory(ScalarsConverterFactory.create())
             .build()
 
     val albums: AlbumApi = retrofit.create(AlbumApi::class.java)
