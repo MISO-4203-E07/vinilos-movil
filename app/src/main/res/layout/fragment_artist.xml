@@ -18,19 +18,4 @@
         android:paddingBottom="12dp"
         tools:listitem="@layout/template_item_artists"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:theme="@style/Theme.Vinilos.FloatingAccentButtonOverlay"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_round_add"
-        android:focusable="true"
-        android:contentDescription="@string/activity_album_cd_floating_btn_new_artist" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

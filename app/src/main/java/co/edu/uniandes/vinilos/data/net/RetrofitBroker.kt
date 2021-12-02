@@ -3,6 +3,7 @@ package co.edu.uniandes.vinilos.data.net
 import co.edu.uniandes.vinilos.data.model.Album
 import co.edu.uniandes.vinilos.data.model.Collector
 import co.edu.uniandes.vinilos.data.model.Performer
+import co.edu.uniandes.vinilos.data.model.Track
 
 class RetrofitBroker {
 
@@ -26,6 +27,14 @@ class RetrofitBroker {
 
         suspend fun insertAlbum(album: Album): Album? {
             val request = ApiClient.albums.insertAlbum(album)
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
+        suspend fun addTrackAlbum(id: String, track: Track): Track? {
+            val request = ApiClient.albums.addTrackToAlbum(id, track)
             return if (request.isSuccessful)
                 request.body()
             else

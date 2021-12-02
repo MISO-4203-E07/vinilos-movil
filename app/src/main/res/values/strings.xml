@@ -21,6 +21,9 @@
     <string name="activity_album_create_hint_url_cover">URL cover</string>
     <string name="activity_album_create_hint_album_description">Description</string>
     <string name="activity_album_create_hint_album_release_date">Release date</string>
+    <string name="activity_album_track_hint_name_track">Name track</string>
+    <string name="activity_album_track_hint_minutes_track">Minutes</string>
+    <string name="activity_album_track_hint_seconds_track">Seconds</string>
     <string name="text_button_cancel">Cancel</string>
     <string name="text_button_create">Create</string>
 

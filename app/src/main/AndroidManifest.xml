@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vinilos">
         <activity
+            android:name=".view.album.AddTrackAlbumActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.album.AlbumCreateActivity"
             android:exported="false" />
         <activity
