@@ -10,7 +10,7 @@ import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Album
 import co.edu.uniandes.vinilos.databinding.TemplateItemAlbumBinding
 
-class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
 
     var onAlbumSelected: ((id: Int) -> Unit)? = null
 
@@ -22,7 +22,7 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
         }
 
     fun onClickAlbum(position: Int) {
-        onAlbumSelected?.invoke(data[position].id)
+        onAlbumSelected?.invoke(data[position].id!!)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumHolder {

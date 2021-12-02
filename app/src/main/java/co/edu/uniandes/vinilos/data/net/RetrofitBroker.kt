@@ -24,6 +24,14 @@ class RetrofitBroker {
                 null
         }
 
+        suspend fun insertAlbum(album: Album): Album? {
+            val request = ApiClient.albums.insertAlbum(album)
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
         suspend fun getAllArtists(): List<Performer> {
             val request = ApiClient.artist.getAllArtists()
             return if (request.isSuccessful)

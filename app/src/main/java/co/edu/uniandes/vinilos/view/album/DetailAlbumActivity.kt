@@ -2,7 +2,6 @@ package co.edu.uniandes.vinilos.view.album
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -10,6 +9,7 @@ import androidx.lifecycle.Observer
 import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.databinding.ActivityDetailAlbumBinding
 import co.edu.uniandes.vinilos.viewmodel.AlbumViewModel
+import org.jetbrains.anko.toast
 
 class DetailAlbumActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class DetailAlbumActivity : AppCompatActivity() {
             binding.album = album
             supportActionBar?.title = "Vinilos - ${album.name}"
             if (album == null)
-                Toast.makeText(this, getString(R.string.activity_detail_album_album_not_exists), Toast.LENGTH_SHORT).show()
+                toast(R.string.activity_detail_album_album_not_exists)
         })
 
         albumViewModel.getAlbumById(idAlbum)

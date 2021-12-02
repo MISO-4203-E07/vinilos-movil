@@ -24,4 +24,6 @@ class AlbumRepository (val application: Application) {
         }
     }
 
+    suspend fun createAlbum(album: Album) = RetrofitBroker.insertAlbum(album)
+
 }

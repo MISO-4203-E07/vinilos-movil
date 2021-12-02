@@ -14,6 +14,7 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
     val listAlbums = MutableLiveData<List<Album>>()
     val album = MutableLiveData<Album>()
+    val albumCreated = MutableLiveData<Album>()
     private val albumsRepository = AlbumRepository(application)
 
     fun getAlbums() {
@@ -32,6 +33,16 @@ class AlbumViewModel(application: Application) : AndroidViewModel(application) {
                 album.postValue(albumsRepository.getAlbumById(id))
             }
         } catch (e: Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun insertAlbum(album: Album) {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                albumCreated.postValue(albumsRepository.createAlbum(album))
+            }
+        } catch (e: java.lang.Exception) {
             Log.e("Error", e.message ?: "Failure service")
         }
     }

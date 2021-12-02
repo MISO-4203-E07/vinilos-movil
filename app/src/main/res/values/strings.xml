@@ -10,12 +10,35 @@
     <string name="activity_detail_album_label_recordLabel">Record label</string>
     <string name="activity_detail_album_album_not_exists">Album does not exist</string>
     <string name="activity_detail_artist_artist_not_exists">Artist does not exist</string>
-    <string name="title_activity_main">MainActivity</string>
-
+    <string name="activity_album_create_date_pick">%1$d/%2$d/%3$d</string>
 
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_artist">Artist</string>
     <string name="menu_album">Album</string>
     <string name="menu_collector">Collector</string>
+    <string name="activity_album_create_hint_album_name">Album name</string>
+    <string name="activity_album_create_hint_url_cover">URL cover</string>
+    <string name="activity_album_create_hint_album_description">Description</string>
+    <string name="activity_album_create_hint_album_release_date">Release date</string>
+    <string name="text_button_cancel">Cancel</string>
+    <string name="text_button_create">Create</string>
+
+    <string-array name="genre_album">
+        <item>Genre</item>
+        <item>Classical</item>
+        <item>Salsa</item>
+        <item>Rock</item>
+        <item>Folk</item>
+    </string-array>
+
+    <string-array name="label_album">
+        <item>Recorded label</item>
+        <item>Sony Music</item>
+        <item>EMI</item>
+        <item>Discos Fuentes</item>
+        <item>Elektra</item>
+        <item>Fania Records</item>
+    </string-array>
+
 </resources>
