@@ -3,6 +3,7 @@ package co.edu.uniandes.vinilos.data.repositories
 import android.app.Application
 import android.util.Log
 import co.edu.uniandes.vinilos.data.model.Album
+import co.edu.uniandes.vinilos.data.model.Track
 import co.edu.uniandes.vinilos.data.net.CacheManager
 import co.edu.uniandes.vinilos.data.net.RetrofitBroker
 
@@ -25,5 +26,7 @@ class AlbumRepository (val application: Application) {
     }
 
     suspend fun createAlbum(album: Album) = RetrofitBroker.insertAlbum(album)
+
+    suspend fun addTrackAlbum(id: String, track: Track) = RetrofitBroker.addTrackAlbum(id, track)
 
 }
