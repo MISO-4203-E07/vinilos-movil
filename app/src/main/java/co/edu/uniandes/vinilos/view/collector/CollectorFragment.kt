@@ -20,7 +20,7 @@ class CollectorFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCollectorBinding.inflate(layoutInflater)
         val root: View = binding.root
 

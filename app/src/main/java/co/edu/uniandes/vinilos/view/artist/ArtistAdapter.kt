@@ -10,7 +10,7 @@ import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Performer
 import co.edu.uniandes.vinilos.databinding.TemplateItemArtistsBinding
 
-class ArtistAdapter() : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>() {
+class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>() {
 
     var onArtistSelected: ((id: Int) -> Unit)? = null
 

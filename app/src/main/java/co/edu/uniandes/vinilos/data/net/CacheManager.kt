@@ -8,7 +8,7 @@ import co.edu.uniandes.vinilos.data.model.Performer
 class CacheManager(context: Context) {
 
     companion object {
-        var instance: CacheManager? = null
+        private var instance: CacheManager? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {
                 instance ?: CacheManager(context).also {
@@ -16,7 +16,6 @@ class CacheManager(context: Context) {
                 }
             }
 
-        const val APP_SPREFS = "co.edu.uniandes.vinilos.app"
         const val COLLECTORS_SPREFS = "co.edu.uniandes.vinilos.collectors"
         fun getPrefs(context: Context, name:String): SharedPreferences {
             return context.getSharedPreferences(name,
