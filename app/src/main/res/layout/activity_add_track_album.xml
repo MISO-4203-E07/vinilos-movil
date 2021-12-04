@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,6 +22,9 @@
             android:id="@+id/etNameTrack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             android:hint="@string/activity_album_track_hint_name_track"
             />
 
@@ -36,6 +40,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tilSeconds"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="#757575"
         app:layout_constraintTop_toBottomOf="@+id/tilNameTrack">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -44,6 +49,9 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/activity_album_track_hint_minutes_track"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,6 +65,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tilMinutes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        android:textColorHint="#757575"
         app:layout_constraintStart_toEndOf="@+id/tilMinutes"
         app:layout_constraintTop_toTopOf="@+id/tilMinutes">
 
@@ -66,6 +75,9 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="@string/activity_album_track_hint_seconds_track"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

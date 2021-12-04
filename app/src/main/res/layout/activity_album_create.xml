@@ -21,6 +21,9 @@
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             android:hint="@string/activity_album_create_hint_album_name" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,6 +41,9 @@
             android:id="@+id/etCover"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             android:hint="@string/activity_album_create_hint_url_cover" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,6 +61,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/activity_album_create_hint_album_description"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
             android:lines="3" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -67,14 +76,18 @@
         android:ems="10"
         android:inputType="date"
         android:minHeight="48dp"
-        android:focusable="false"
+        android:focusable="true"
         android:clickable="true"
         android:maxLines="1"
         android:hint="@string/activity_album_create_hint_album_release_date"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textColorHint="@color/secondaryDark"
         app:layout_constraintEnd_toEndOf="@+id/tilDescription"
         app:layout_constraintStart_toStartOf="@+id/tilDescription"
-        app:layout_constraintTop_toBottomOf="@+id/tilDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/tilDescription"
+        android:autofillHints="" />
 
     <Spinner
         android:id="@+id/spGenre"
