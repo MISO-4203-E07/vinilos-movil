@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinilos.data.model.Collector
+import co.edu.uniandes.vinilos.data.model.CollectorAlbum
 import co.edu.uniandes.vinilos.data.repositories.CollectorRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,6 +14,7 @@ import kotlinx.coroutines.launch
 class CollectorViewModel(application: Application) : AndroidViewModel(application) {
     val listCollector = MutableLiveData<List<Collector>>()
     val collector = MutableLiveData<Collector>()
+    val albumesCollector = MutableLiveData<List<CollectorAlbum>>()
     private val collectorRepository = CollectorRepository(application)
 
     fun getCollectors() {
@@ -29,6 +31,16 @@ class CollectorViewModel(application: Application) : AndroidViewModel(applicatio
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 collector.postValue(collectorRepository.getCollectorById(id))
+            }
+        } catch (e: Exception) {
+            Log.e("Error", e.message ?: "Failure service")
+        }
+    }
+
+    fun getAlbumesByIdCollector(id: Int) {
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                albumesCollector.postValue(collectorRepository.getAlbumesByCollector(id))
             }
         } catch (e: Exception) {
             Log.e("Error", e.message ?: "Failure service")

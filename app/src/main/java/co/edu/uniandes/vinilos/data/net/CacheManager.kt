@@ -1,8 +1,8 @@
 package co.edu.uniandes.vinilos.data.net
 
 import android.content.Context
-import android.content.SharedPreferences
 import co.edu.uniandes.vinilos.data.model.Album
+import co.edu.uniandes.vinilos.data.model.Collector
 import co.edu.uniandes.vinilos.data.model.Performer
 
 class CacheManager(context: Context) {
@@ -15,18 +15,11 @@ class CacheManager(context: Context) {
                     instance = it
                 }
             }
-
-        const val APP_SPREFS = "co.edu.uniandes.vinilos.app"
-        const val COLLECTORS_SPREFS = "co.edu.uniandes.vinilos.collectors"
-        fun getPrefs(context: Context, name:String): SharedPreferences {
-            return context.getSharedPreferences(name,
-                Context.MODE_PRIVATE
-            )
-        }
     }
 
     private var performers: HashMap<Int, Performer> = hashMapOf()
     private var albums: HashMap<Int, Album> = hashMapOf()
+    private var collectors: HashMap<Int, Collector> = hashMapOf()
 
     fun addPerformer(performerId: Int, performer: Performer?) {
         performer?.let { artist ->
@@ -48,6 +41,17 @@ class CacheManager(context: Context) {
 
     fun getAlbum(albumId: Int): Album? {
         return if (albums.containsKey(albumId)) albums[albumId] else null
+    }
+
+    fun addCollector(collectorId: Int, collector: Collector?) {
+        collector?.let { collect ->
+            if (!collectors.containsKey(collectorId))
+                collectors[collectorId] = collect
+        }
+    }
+
+    fun getCollector(collectorId: Int): Collector? {
+        return if (collectors.containsKey(collectorId)) collectors[collectorId]!! else null
     }
 
 }

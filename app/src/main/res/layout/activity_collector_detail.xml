@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="collector"
+            type="co.edu.uniandes.vinilos.data.model.Collector" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.collector.CollectorDetailActivity">
+
+        <TextView
+            android:id="@+id/tvCollectorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="20sp"
+            android:text="@{collector.name}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Roberto Blades" />
+
+        <TextView
+            android:id="@+id/tvCollectorPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:text="@{collector.telephone}"
+            app:layout_constraintEnd_toEndOf="@+id/tvCollectorName"
+            app:layout_constraintStart_toStartOf="@+id/tvCollectorName"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollectorName"
+            tools:text="311223344" />
+
+        <TextView
+            android:id="@+id/tvCollectorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:text="@{collector.email}"
+            app:layout_constraintEnd_toEndOf="@+id/tvCollectorPhone"
+            app:layout_constraintStart_toStartOf="@+id/tvCollectorPhone"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollectorPhone"
+            tools:text="collectoremail@uniandes.edu.co" />
+
+        <TextView
+            android:id="@+id/tvLabelAlbums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="@string/activity_collector_detail_label_albumes"
+            app:layout_constraintStart_toStartOf="@+id/tvCollectorEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tvCollectorEmail" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCollectorAlbums"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelNoAlbums"
+            tools:listitem="@layout/template_item_album" />
+
+        <TextView
+            android:id="@+id/tvLabelNoAlbums"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/activity_collector_detail__no_info_albumes"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLabelAlbums"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelAlbums" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
