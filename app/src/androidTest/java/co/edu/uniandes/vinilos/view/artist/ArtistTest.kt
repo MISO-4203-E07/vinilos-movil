@@ -74,7 +74,7 @@ class ArtistTest : BaseTest() {
 
         onView(withId(R.id.tvArtist))
             .perform(scrollToPosition<ViewHolder>(0))
-            .check(matches(atPosition(0, isDisplayed())));
+            .check(matches(atPosition(0, isDisplayed())))
     }
 
     @Test
@@ -88,7 +88,7 @@ class ArtistTest : BaseTest() {
         getItemNavBar(R.id.nav_home).perform(click())
 
         onView(withId(R.id.tvArtist))
-            .check(matches(atPosition(100, not(isDisplayed()))));
+            .check(matches(atPosition(100, not(isDisplayed()))))
     }
 
     @Test

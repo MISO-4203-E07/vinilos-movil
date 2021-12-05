@@ -13,7 +13,7 @@ import kotlinx.serialization.json.Json
 import org.json.JSONArray
 
 class CollectorRepository (val application: Application) {
-    val format = Json
+    private val format = Json
 
     //Determinar la fuente de datos que se va a utilizar. Si es necesario consultar la red, ejecutar el siguiente código
     suspend fun getAllCollectors() = RetrofitBroker.getAllCollectors()
@@ -32,7 +32,7 @@ class CollectorRepository (val application: Application) {
         } else collector
     }
 
-    suspend fun getCollector(collectorId: Int): Collector? {
+    private suspend fun getCollector(collectorId: Int): Collector? {
         val prefs = CacheManager.getPrefs(application.baseContext, CacheManager.COLLECTORS_SPREFS)
         if (prefs.contains(collectorId.toString())) {
             val storedVal = prefs.getString(collectorId.toString(), "")
@@ -45,7 +45,7 @@ class CollectorRepository (val application: Application) {
         return null
     }
 
-    suspend fun addCollector(collectorId: Int, collector: Collector?){
+    private suspend fun addCollector(collectorId: Int, collector: Collector?){
         val prefs = CacheManager.getPrefs(application.baseContext, CacheManager.COLLECTORS_SPREFS)
         if (!prefs.contains(collectorId.toString())) {
             val store = format.encodeToString(collector)
