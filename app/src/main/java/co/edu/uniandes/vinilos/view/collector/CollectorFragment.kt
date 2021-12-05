@@ -1,5 +1,6 @@
 package co.edu.uniandes.vinilos.view.collector
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,7 +40,10 @@ class CollectorFragment : Fragment() {
     }
 
     private fun goToDetailCollector(id: Int) {
-        //TODO DETAIL HU007
+        val intent = Intent(binding.root.context, CollectorDetailActivity::class.java).apply {
+            putExtra("ID_COLLECTOR", id)
+        }
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

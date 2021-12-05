@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Vinilos</string>
     <string name="template_album_cd_ivAlbum">Album cover</string>
-    <string name="activity_album_cd_floating_btn_new_album">Add a new album</string>
+    <string name="activity_album_cd_floating_btn_new_album">Button to add a new album</string>
     <string name="activity_album_cd_floating_btn_new_artist">Button to add a new artist</string>
-    <string name="activity_detail_album_cd_floating_btn_new_track">Associate tracks to the album</string>
+    <string name="activity_detail_album_cd_floating_btn_new_track">Button to associate tracks to the album</string>
     <string name="activity_detail_album_no_info_performers">No performers available</string>
     <string name="activity_detail_album_no_info_tracks">No tracks available</string>
     <string name="activity_detail_album_label_tracks">Tracks</string>
@@ -26,6 +26,9 @@
     <string name="activity_album_track_hint_seconds_track">Seconds</string>
     <string name="text_button_cancel">Cancel</string>
     <string name="text_button_create">Create</string>
+    <string name="activity_collector_detail_label_albumes">Albumes</string>
+    <string name="activity_collector_detail_collector_not_exists">Collector does not exist</string>
+    <string name="activity_collector_detail__no_info_albumes">No albumes available</string>
 
     <string-array name="genre_album">
         <item>Genre</item>
