@@ -21,7 +21,7 @@ class ArtistFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentArtistBinding.inflate(layoutInflater)
         val root: View = binding.root
 

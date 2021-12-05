@@ -15,7 +15,7 @@ class DetailAlbumActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailAlbumBinding
     private val albumViewModel: AlbumViewModel by viewModels()
-    var idAlbum: Int = 0
+    private var idAlbum: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

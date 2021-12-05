@@ -10,7 +10,7 @@ import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.data.model.Collector
 import co.edu.uniandes.vinilos.databinding.TemplateItemCollectorBinding
 
-class CollectorAdapter() : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>() {
+class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>() {
 
     var onCollectorSelected: ((id: Int) -> Unit)? = null
 

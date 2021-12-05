@@ -76,7 +76,7 @@
         android:ems="10"
         android:inputType="date"
         android:minHeight="48dp"
-        android:focusable="true"
+        android:focusable="false"
         android:clickable="true"
         android:maxLines="1"
         android:hint="@string/activity_album_create_hint_album_release_date"
