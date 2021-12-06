@@ -44,7 +44,10 @@ class CollectorDetailActivity : AppCompatActivity() {
 
         collectorViewModel.albumesCollector.observe(this, { list ->
             val albumes: MutableList<Album> = mutableListOf()
-            list.forEach { collectorAlbum -> albumes.add(collectorAlbum.album) }
+
+            for (i in list.indices)
+                albumes.add(list[i].album)
+
             if (albumes.isNotEmpty())
                 adapter.data = albumes
             else {
