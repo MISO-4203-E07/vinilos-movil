@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import co.edu.uniandes.vinilos.R
 import co.edu.uniandes.vinilos.databinding.ActivityArtistDetailBinding
 import co.edu.uniandes.vinilos.viewmodel.ArtistViewModel
@@ -15,7 +14,7 @@ class ArtistDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityArtistDetailBinding
     private val artistViewModel: ArtistViewModel by viewModels()
-    var idArtist: Int = 0
+    private var idArtist: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +23,7 @@ class ArtistDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         idArtist = intent.getIntExtra("ID_ARTIST", 0)
-        artistViewModel.performer.observe(this, Observer { performer ->
+        artistViewModel.performer.observe(this, { performer ->
             binding.performer = performer
             supportActionBar?.title = "Vinilos - ${performer.name}"
             if (performer == null)

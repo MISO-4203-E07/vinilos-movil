@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.album.AlbumCreateActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
+            android:hint="@string/activity_album_create_hint_album_name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCover"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tilName"
+        app:layout_constraintStart_toStartOf="@+id/tilName"
+        app:layout_constraintTop_toBottomOf="@+id/tilName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
+            android:hint="@string/activity_album_create_hint_url_cover" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tilCover"
+        app:layout_constraintStart_toStartOf="@+id/tilCover"
+        app:layout_constraintTop_toBottomOf="@+id/tilCover">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/activity_album_create_hint_album_description"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textColorHint="@color/secondaryDark"
+            android:lines="3" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/etReleaseDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:focusable="false"
+        android:maxLines="1"
+        android:hint="@string/activity_album_create_hint_album_release_date"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textColorHint="@color/secondaryDark"
+        app:layout_constraintEnd_toEndOf="@+id/tilDescription"
+        app:layout_constraintStart_toStartOf="@+id/tilDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tilDescription"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:entries="@array/genre_album"
+        app:layout_constraintEnd_toEndOf="@+id/etReleaseDate"
+        app:layout_constraintStart_toStartOf="@+id/etReleaseDate"
+        app:layout_constraintTop_toBottomOf="@+id/etReleaseDate" />
+
+    <Spinner
+        android:id="@+id/spLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:entries="@array/label_album"
+        app:layout_constraintEnd_toEndOf="@+id/spGenre"
+        app:layout_constraintStart_toStartOf="@+id/spGenre"
+        app:layout_constraintTop_toBottomOf="@+id/spGenre" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:textColor="@color/purple_500"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/text_button_cancel"
+        app:layout_constraintEnd_toStartOf="@+id/btnCreate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spLabel" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/text_button_create"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCancel"
+        app:layout_constraintTop_toTopOf="@+id/btnCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

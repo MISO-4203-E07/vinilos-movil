@@ -3,10 +3,7 @@ package co.edu.uniandes.vinilos.base
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.PerformException
-import androidx.test.espresso.UiController
-import androidx.test.espresso.ViewAction
+import androidx.test.espresso.*
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
@@ -56,7 +53,7 @@ open class BaseTest {
         }
     }
 
-    protected fun getNavBar() = Espresso.onView(
+    protected fun getNavBar(): ViewInteraction = Espresso.onView(
         Matchers.allOf(
             ViewMatchers.withContentDescription("Open navigation drawer"),
             childAtPosition(
@@ -73,7 +70,7 @@ open class BaseTest {
         )
     )
 
-    protected fun getItemNavBar(item: Int) = Espresso.onView(
+    protected fun getItemNavBar(item: Int): ViewInteraction = Espresso.onView(
         Matchers.allOf(ViewMatchers.withId(item))
     )
 

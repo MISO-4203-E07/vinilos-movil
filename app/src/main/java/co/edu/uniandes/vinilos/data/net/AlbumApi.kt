@@ -1,8 +1,11 @@
 package co.edu.uniandes.vinilos.data.net
 
 import co.edu.uniandes.vinilos.data.model.Album
+import co.edu.uniandes.vinilos.data.model.Track
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface AlbumApi {
@@ -12,5 +15,11 @@ interface AlbumApi {
 
     @GET("albums/{id}")
     suspend fun getAlbumById(@Path("id") id: String) : Response<Album>
+
+    @POST("albums")
+    suspend fun insertAlbum(@Body album: Album) : Response<Album>
+
+    @POST("albums/{id}/tracks")
+    suspend fun addTrackToAlbum(@Path("id") id: String, @Body track: Track) : Response<Track>
 
 }

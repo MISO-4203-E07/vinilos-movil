@@ -21,7 +21,7 @@ class AlbumFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAlbumBinding.inflate(layoutInflater)
         val root: View = binding.root
 
@@ -34,9 +34,17 @@ class AlbumFragment : Fragment() {
             adapter.data = it
         })
 
-        albumViewModel.getAlbums()
+        binding.fabCreateAlbum.setOnClickListener {
+            val intent = Intent(context, AlbumCreateActivity::class.java)
+            startActivity(intent)
+        }
 
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        albumViewModel.getAlbums()
     }
 
     private fun goToDetailAlbum(id: Int) {

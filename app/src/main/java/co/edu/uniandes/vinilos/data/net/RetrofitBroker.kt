@@ -1,8 +1,6 @@
 package co.edu.uniandes.vinilos.data.net
 
-import co.edu.uniandes.vinilos.data.model.Album
-import co.edu.uniandes.vinilos.data.model.Collector
-import co.edu.uniandes.vinilos.data.model.Performer
+import co.edu.uniandes.vinilos.data.model.*
 
 class RetrofitBroker {
 
@@ -18,6 +16,22 @@ class RetrofitBroker {
 
         suspend fun getAlbumById (id: Int): Album? {
             val request = ApiClient.albums.getAlbumById(id.toString())
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
+        suspend fun insertAlbum(album: Album): Album? {
+            val request = ApiClient.albums.insertAlbum(album)
+            return if (request.isSuccessful)
+                request.body()
+            else
+                null
+        }
+
+        suspend fun addTrackAlbum(id: String, track: Track): Track? {
+            val request = ApiClient.albums.addTrackToAlbum(id, track)
             return if (request.isSuccessful)
                 request.body()
             else
@@ -55,6 +69,14 @@ class RetrofitBroker {
                 request.body()
             else
                 null
+        }
+
+        suspend fun getAlbumesByIdCollector (id: Int): List<CollectorAlbum> {
+            val request = ApiClient.collector.getAlbumsByIdCollector(id.toString())
+            return if (request.isSuccessful)
+                request.body() ?: listOf()
+            else
+                listOf()
         }
     }
 }
